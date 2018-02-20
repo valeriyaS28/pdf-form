@@ -49,6 +49,14 @@
                     <input type="text" class="input-xlarge" name="Address" >
                 </div>
             </div> 
+		<div class="control-group">
+            <label class="control-label">City</label>
+            <div class="controls">
+                <div class="input-prepend">
+                <span class="add-on"><i class="icon-envelope"></i></span>
+                    <input type="text" class="input-xlarge" name="City" >
+                </div>
+            </div>
 	    <div class="control-group">
             <label class="control-label">ZIP_Code</label>
             <div class="controls">
