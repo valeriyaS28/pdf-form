@@ -8,7 +8,11 @@
 </head>
 
 <body>
+
 <div class="container">
+<header>
+<h1 name="Title">Payment Agreement Form</h1>
+</header>
       <form class="contact-us form-horizontal" action="actionpdf.php" method="post">
         <legend>Fill Form and submit to generate PDF</legend>        
         <div class="control-group">
@@ -45,6 +49,22 @@
                     <input type="text" class="input-xlarge" name="Address" >
                 </div>
             </div> 
+	    <div class="control-group">
+            <label class="control-label">ZIP_Code</label>
+            <div class="controls">
+                <div class="input-prepend">
+                <span class="add-on"><i class="icon-envelope"></i></span>
+                    <input type="text" class="input-xlarge" name="ZIP_Code" >
+                </div>
+            </div>
+	    <div class="control-group">
+            <label class="control-label">State</label>
+            <div class="controls">
+                <div class="input-prepend">
+                <span class="add-on"><i class="icon-envelope"></i></span>
+                    <input type="text" class="input-xlarge" name="State" >
+                </div>
+            </div>
 		<div class="control-group">
             <label class="control-label">Course</label>
             <div class="controls">
