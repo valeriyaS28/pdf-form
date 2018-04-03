@@ -6,9 +6,9 @@
 require('fpdf17/fpdf.php');
 //create new pdf file
 $pdf = new FPDF('P','mm',array(216,280));
-// legal widh = 216 mm
-//legal height = 280 mm
-// default margine 15 mm 
+// letter widh = 216 mm
+//letter height = 280 mm
+// default margine 10 mm
 // total width = 216 - 2*10 = 196
 $a = 196;
 // create first page that containes candidate information from our payment page
@@ -18,7 +18,7 @@ $pdf->AddPage();
 $pdf->SetFont('Arial','B',18);
 // all text should be inside of the cell
 // cell parameters (width, height,"[text]", border (0 or 1), new line (0  or 1), alignment - optional)
-$pdf->Image('logo.png',80,10,-450);
+$pdf->Image('logo.jpg',100,10,-550);
 $pdf->Cell($a,20,"",0,1);
 
 
@@ -36,17 +36,17 @@ $row_width = 6;
 $row_distance = 4;
 
 $pdf->Cell(40, $row_width, "Candidate's Full Name: " , 0, 0);
-$pdf->Cell(($a-40), $row_width, $_POST['name'], 1, 1); 
+$pdf->Cell(($a-40), $row_width, $_POST['name'], 1, 1);
 
 $pdf->Cell($a,$row_distance,"",0,1); //new line
 
 $pdf->Cell(20, $row_width, "Email ID: ", 0, 0);
-$pdf->Cell(80, $row_width, $_POST['email'], 1,0 ); 
+$pdf->Cell(80, $row_width, $_POST['email'], 1,0 );
 
 $pdf->Cell(10,$row_width,"",0,0);//placeholder
 
 $pdf->Cell(28, $row_width, "Phone number: ", 0, 0);
-$pdf->Cell(($a-20-80-10-28), $row_width, $_POST['Phone'], 1,1 ); 
+$pdf->Cell(($a-20-80-10-28), $row_width, $_POST['Phone'], 1,1 );
 
 $pdf->Cell($a,$row_distance,"",0,1);//new line
 
@@ -61,7 +61,7 @@ $pdf->Cell(25, $row_width, $_POST['City'], 1,0 );
 $pdf->Cell(10,$row_width,"",0,0);//placeholder
 
 $pdf->Cell(15, $row_width, "State: ", 0, 0);
-$pdf->Cell(40, $row_width, $_POST['State'], 1,0 ); 
+$pdf->Cell(40, $row_width, $_POST['State'], 1,0 );
 
 $pdf->Cell(11,$row_width,"",0,0);//placeholder
 
@@ -86,7 +86,7 @@ $pdf->Cell($a,$row_width,"",0,1);//new line
 //set font for body text
 $pdf->SetFont('Arial','',10);
 
-$pdf->Cell($a, $row_width, "Infotek Solutions, Inc. (Provider) is responsible for running Training related activities and training materials and assessment.", 0, 1); //new line
+$pdf->Cell($a, $row_width, "[Company name] (Provider) is responsible for running Training related activities and training materials and assessment.", 0, 1); //new line
 $pdf->Cell($a, $row_width, "Nothing in this Agreement shall be read as an Employment Contract between Candidate and Provider. This training should", 0, 1); //new line
 $pdf->Cell($a, $row_width, "not be considered as a degree from a College or University.", 0, 1); //new line
 $pdf->Cell($a, $row_distance, "", 0, 1); //new line
@@ -114,7 +114,7 @@ $pdf->Cell($b2, $row_width, $_POST['course'], 1, 1); //new line
 $pdf->Cell($a,$row_distance,"",0,1); //new line
 
 $pdf->Cell($b1, $row_width, "Price: ", 0, 0);
-$pdf->Cell(50, $row_width, $_POST['Price'], 1, 0); 
+$pdf->Cell(50, $row_width, $_POST['Price'], 1, 0);
 
 $pdf->Cell(15,$row_width,"",0,0);//placeholder
 
@@ -143,7 +143,7 @@ $pdf->Cell($c1, $row_width, "1. ",0,0);
 $pdf->Cell($c2, $row_width, "Candidate will be provided to attend free six hours class before making the decision to enroll in a training program.", 0, 1); //new line
 
 $pdf->Cell($c1, $row_width, "2. ",0,0);
-$pdf->Cell($c2, $row_width, "After making a payment, Candidate will get the receipt from Infotek Solutions Billing Team on the enrolled course.", 0, 1); //new line
+$pdf->Cell($c2, $row_width, "After making a payment, Candidate will get the receipt from the Billing Team on the enrolled course.", 0, 1); //new line
 
 $pdf->Cell($c1, $row_width, "3. ",0,0);
 $pdf->Cell($c2, $row_width, "To get continuous service Candidate should submit the payment before the due date.", 0, 1);//new line
@@ -159,7 +159,7 @@ $pdf->Cell($c2, $row_width, "Account renewal requires additional charges of $199
 $pdf->Cell($c1, $row_width, "7. ",0,0);
 $pdf->Cell($c2, $row_width, "Failing to pay fee balance will leads to forward your case to collectors.", 0, 1); //new line
 
-//create second page use: 
+//create second page use:
 $pdf->AddPage();
 
 
@@ -197,7 +197,7 @@ $pdf->Cell($a, $row_width, " ",0,1);//new line
 
 
 
-$pdf->Cell($a, $row_width, "My signature below indicates that I have read and understood all of the policies stated and agree to abide by these policies.", 0, 1); 
+$pdf->Cell($a, $row_width, "My signature below indicates that I have read and understood all of the policies stated and agree to abide by these policies.", 0, 1);
 $pdf->Cell(20, $row_width, "Signature", 0, 0);
 $pdf->Cell(($a-20-15-20-40), $row_width, "", 1, 0);
 
@@ -206,7 +206,7 @@ $pdf->Cell(15,$row_width,"",0,0);//placeholder
 $pdf->Cell(20, $row_width, "Date", 0, 0);
 $pdf->Cell(40, $row_width, "", 1, 1);
 
-$pdf->Cell($a, $row_width, "Original: to Infotek Billing Team Office; Copy: to Candidate", 0, 1); 
+$pdf->Cell($a, $row_width, "Original: to Billing Team Office; Copy: to Candidate", 0, 1);
 
 
 
